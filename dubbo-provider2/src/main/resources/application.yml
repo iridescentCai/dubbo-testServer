@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: dubbo-provider
+
+server:
+  port: 5003
+
+dubbo:
+  application:
+    name: caicai-dubbo-provider
+  scan:
+    base-packages: com.caicai.dubboInterface
+#  dubbo.protocol.name 和 dubbo.protocol.port。
+#  Dubbo 的协议配置，默认值为 dubbo 和 20880，这里配置出来主要是为了提醒大家。
+#  Dubbo 服务提供者会占用掉 dubbo.protocol.port 配置的端口号，
+#  当一个主机上启动多个服务提供者时，除了需要修改 server.port 外还需要修改 dubbo.protocol.port 的值
+  protocol:
+    port: 20882
+    name: dubbo
+#  dubbo.registry.address 、dubbo.config-center.address 和 dubbo.metadata-report.address：
+#  Dubbo 注册中心、配置中心、元数据中心的配置地址，同时指向 Naocs。
+  registry:
+#    address: nacos://localhost:8848
+    address: zookeeper://localhost:2181
+    simplified: true
+  config-center:
+#    address: nacos://localhost:8848
+    address: zookeeper://localhost:2181
+  metadata-report:
+#    address: nacos://localhost:8848
+    address: zookeeper://localhost:2181
+
