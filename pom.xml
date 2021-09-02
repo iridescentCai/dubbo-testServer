@@ -11,6 +11,8 @@
     <modules>
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
+        <module>dubbo-provider-sentinel</module>
+        <module>dubbo-provider2</module>
         <module>common</module>
     </modules>
 
